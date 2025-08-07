@@ -33,6 +33,9 @@ export default function Index() {
       <section className="pt-32 pb-20 px-4">
         <div className="container mx-auto text-center">
           <div className="mb-8">
+            <div className="pixel-logo text-4xl md:text-6xl mb-4">
+              ИИ АГЕНТСТВО БЕРЁЗКА
+            </div>
             <h1 className="text-6xl md:text-8xl font-mono font-bold mb-6 animate-fade-in">
               <span className="glitch-text" data-text="АВТОМАТИЗАЦИЯ">АВТОМАТИЗАЦИЯ</span>
             </h1>
@@ -71,7 +74,7 @@ export default function Index() {
             </Button>
           </div>
 
-          <div className="birch-pattern h-32 animate-birch-pattern"></div>
+          <div className="pixel-pattern h-32"></div>
         </div>
       </section>
 
@@ -96,15 +99,11 @@ export default function Index() {
                 <Badge variant="outline" className="font-mono">ТЕЛЕГРАМ</Badge>
               </div>
             </div>
-            <div className="relative">
-              <div className="birch-pattern-dark h-64 w-full rounded"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-birch-white font-mono text-2xl glitch-text" data-text="ЦИФРОВОЙ_ЛЕС">ЦИФРОВОЙ_ЛЕС</div>
-              </div>
-              {/* Floating Stone */}
-              <div className="floating-stone absolute top-4 right-8 w-12 h-12">
+            <div className="flex justify-center items-center">
+              {/* Central Stone */}
+              <div className="floating-stone relative w-48 h-48">
                 <img src="/img/35c52679-3bcd-4639-8e3e-295c084321f0.jpg" alt="Stone" className="w-full h-full object-contain" />
-                <div className="stone-label absolute -bottom-6 -right-4">камень</div>
+                <div className="stone-label absolute -bottom-8 left-1/2 transform -translate-x-1/2">камень</div>
               </div>
             </div>
           </div>

@@ -196,26 +196,19 @@
     font-weight: bold;
   }
 
-  .tree-slash::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: 2px;
-    width: 8px;
-    height: 2px;
-    background: currentColor;
-    transform: rotate(-30deg);
-  }
-
   .tree-slash::after {
     content: "";
     position: absolute;
-    bottom: -2px;
-    right: 2px;
+    top: -3px;
+    right: -4px;
     width: 6px;
-    height: 1px;
-    background: currentColor;
-    transform: rotate(45deg);
+    height: 8px;
+    background-image:
+      radial-gradient(circle at 1px 2px, #2d5016 0.8px, transparent 0.8px),
+      radial-gradient(circle at 4px 5px, #2d5016 0.8px, transparent 0.8px),
+      radial-gradient(circle at 2px 7px, #2d5016 0.6px, transparent 0.6px);
+    background-size: 6px 8px;
+    opacity: 0.6;
   }
 
   .censored {
@@ -301,32 +294,81 @@
   }
 
   .floating-stone {
-    position: absolute;
-    z-index: 10;
-    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.3));
-    animation: float 4s ease-in-out infinite;
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
   }
 
   @keyframes float {
     0%,
     100% {
-      transform: translateY(0px);
+      transform: translateY(0px) rotate(0deg);
     }
-    50% {
-      transform: translateY(-8px);
+    33% {
+      transform: translateY(-15px) rotate(3deg);
+    }
+    66% {
+      transform: translateY(-5px) rotate(-2deg);
     }
   }
 
   .stone-label {
-    position: absolute;
-    font-size: 10px;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Courier New", monospace;
+    font-size: 12px;
     color: #666;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3px 6px;
+    border-radius: 3px;
     white-space: nowrap;
+    font-weight: bold;
+    transform: rotate(-5deg);
   }
 
   .stone-label::before {
     content: "↗";
     margin-right: 2px;
+  }
+
+  .pixel-pattern {
+    position: relative;
+    background: #1a1a1a;
+    background-image:
+      radial-gradient(circle at 5px 5px, #ffffff 1px, transparent 1px),
+      radial-gradient(circle at 15px 8px, #ffffff 1.5px, transparent 1.5px),
+      radial-gradient(circle at 25px 12px, #ffffff 1px, transparent 1px),
+      radial-gradient(circle at 35px 6px, #ffffff 2px, transparent 2px),
+      radial-gradient(circle at 45px 15px, #ffffff 1px, transparent 1px),
+      radial-gradient(circle at 55px 9px, #ffffff 1.5px, transparent 1.5px),
+      radial-gradient(circle at 65px 18px, #ffffff 1px, transparent 1px),
+      radial-gradient(circle at 75px 4px, #ffffff 1.5px, transparent 1.5px),
+      radial-gradient(circle at 85px 22px, #ffffff 1px, transparent 1px),
+      radial-gradient(circle at 95px 11px, #ffffff 2px, transparent 2px);
+    background-size: 100px 25px;
+    opacity: 0.8;
+    animation: pixelFlow 4s linear infinite;
+  }
+
+  @keyframes pixelFlow {
+    0% {
+      background-position: 0px 0px;
+    }
+    100% {
+      background-position: 100px 0px;
+    }
+  }
+
+  .pixel-logo {
+    font-family: "Courier New", monospace;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-shadow:
+      1px 1px 0 #000,
+      2px 2px 0 #333,
+      3px 3px 0 #666;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+    background: linear-gradient(45deg, #ffffff, #f0f0f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }

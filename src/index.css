@@ -110,13 +110,20 @@
   }
 
   .birch-pattern {
-    background-image: url('data:image/svg+xml,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="birch" patternUnits="userSpaceOnUse" width="20" height="20"><rect width="20" height="20" fill="%23ffffff"/><rect x="0" y="0" width="4" height="4" fill="%23000000"/><rect x="8" y="8" width="4" height="4" fill="%23000000"/><rect x="16" y="4" width="4" height="4" fill="%23000000"/><rect x="4" y="16" width="4" height="4" fill="%23000000"/></pattern></defs><rect width="20" height="20" fill="url(%23birch)"/></svg>');
-    background-size: 20px 20px;
+    background-image:
+      url("https://cdn.poehali.dev/files/1b318a6b-6f69-493f-9e90-e706491a0662.jpg"),
+      url('data:image/svg+xml,<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="birch" patternUnits="userSpaceOnUse" width="40" height="40"><rect width="40" height="40" fill="%23ffffff"/><rect x="0" y="0" width="2" height="20" fill="%23000000"/><rect x="0" y="25" width="2" height="15" fill="%23000000"/><rect x="5" y="3" width="1" height="10" fill="%23000000"/><rect x="5" y="18" width="1" height="15" fill="%23000000"/><rect x="10" y="0" width="2" height="25" fill="%23000000"/><rect x="10" y="30" width="2" height="10" fill="%23000000"/><rect x="15" y="5" width="1" height="12" fill="%23000000"/><rect x="15" y="22" width="1" height="18" fill="%23000000"/><rect x="20" y="0" width="2" height="18" fill="%23000000"/><rect x="20" y="25" width="2" height="15" fill="%23000000"/><rect x="25" y="8" width="1" height="15" fill="%23000000"/><rect x="25" y="28" width="1" height="12" fill="%23000000"/><rect x="30" y="2" width="2" height="20" fill="%23000000"/><rect x="30" y="27" width="2" height="13" fill="%23000000"/><rect x="35" y="0" width="1" height="25" fill="%23000000"/><rect x="35" y="30" width="1" height="10" fill="%23000000"/></pattern></defs><rect width="40" height="40" fill="url(%23birch)"/></svg>');
+    background-blend-mode: multiply;
+    background-size: 40px 40px;
   }
 
   .birch-pattern-dark {
-    background-image: url('data:image/svg+xml,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="birch-dark" patternUnits="userSpaceOnUse" width="20" height="20"><rect width="20" height="20" fill="%23000000"/><rect x="0" y="0" width="4" height="4" fill="%23ffffff"/><rect x="8" y="8" width="4" height="4" fill="%23ffffff"/><rect x="16" y="4" width="4" height="4" fill="%23ffffff"/><rect x="4" y="16" width="4" height="4" fill="%23ffffff"/></pattern></defs><rect width="20" height="20" fill="url(%23birch-dark)"/></svg>');
-    background-size: 20px 20px;
+    background-image:
+      url("https://cdn.poehali.dev/files/1b318a6b-6f69-493f-9e90-e706491a0662.jpg"),
+      url('data:image/svg+xml,<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="birch-dark" patternUnits="userSpaceOnUse" width="40" height="40"><rect width="40" height="40" fill="%23000000"/><rect x="0" y="0" width="2" height="20" fill="%23ffffff"/><rect x="0" y="25" width="2" height="15" fill="%23ffffff"/><rect x="5" y="3" width="1" height="10" fill="%23ffffff"/><rect x="5" y="18" width="1" height="15" fill="%23ffffff"/><rect x="10" y="0" width="2" height="25" fill="%23ffffff"/><rect x="10" y="30" width="2" height="10" fill="%23ffffff"/><rect x="15" y="5" width="1" height="12" fill="%23ffffff"/><rect x="15" y="22" width="1" height="18" fill="%23ffffff"/><rect x="20" y="0" width="2" height="18" fill="%23ffffff"/><rect x="20" y="25" width="2" height="15" fill="%23ffffff"/><rect x="25" y="8" width="1" height="15" fill="%23ffffff"/><rect x="25" y="28" width="1" height="12" fill="%23ffffff"/><rect x="30" y="2" width="2" height="20" fill="%23ffffff"/><rect x="30" y="27" width="2" height="13" fill="%23ffffff"/><rect x="35" y="0" width="1" height="25" fill="%23ffffff"/><rect x="35" y="30" width="1" height="10" fill="%23ffffff"/></pattern></defs><rect width="40" height="40" fill="url(%23birch-dark)"/></svg>');
+    background-blend-mode: screen;
+    filter: invert(1);
+    background-size: 40px 40px;
   }
 
   .glitch-text {
@@ -181,5 +188,145 @@
     80% {
       transform: translate(-2px, 2px);
     }
+  }
+
+  .tree-slash {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+  }
+
+  .tree-slash::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 2px;
+    width: 8px;
+    height: 2px;
+    background: currentColor;
+    transform: rotate(-30deg);
+  }
+
+  .tree-slash::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    right: 2px;
+    width: 6px;
+    height: 1px;
+    background: currentColor;
+    transform: rotate(45deg);
+  }
+
+  .censored {
+    position: relative;
+    color: transparent;
+    background: #000;
+    border-radius: 2px;
+    animation: censor-flicker 2s infinite;
+  }
+
+  .censored::before {
+    content: attr(data-censored);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    filter: blur(2px);
+    animation: blur-reveal 3s ease-in-out infinite;
+  }
+
+  @keyframes censor-flicker {
+    0%,
+    70% {
+      opacity: 1;
+    }
+    75%,
+    85% {
+      opacity: 0.3;
+    }
+    90%,
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes blur-reveal {
+    0%,
+    60% {
+      filter: blur(4px);
+    }
+    70%,
+    90% {
+      filter: blur(0px);
+    }
+    95%,
+    100% {
+      filter: blur(4px);
+    }
+  }
+
+  .typewriter {
+    border-right: 2px solid currentColor;
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    0%,
+    50% {
+      border-color: currentColor;
+    }
+    51%,
+    100% {
+      border-color: transparent;
+    }
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes erase {
+    from {
+      width: 100%;
+    }
+    to {
+      width: 0;
+    }
+  }
+
+  .floating-stone {
+    position: absolute;
+    z-index: 10;
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.3));
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  .stone-label {
+    position: absolute;
+    font-size: 10px;
+    font-family: "IBM Plex Mono", monospace;
+    color: #666;
+    white-space: nowrap;
+  }
+
+  .stone-label::before {
+    content: "↗";
+    margin-right: 2px;
   }
 }

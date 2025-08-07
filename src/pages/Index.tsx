@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
 import { Badge } from "@/components/ui/badge";
+import TypewriterText from "@/components/TypewriterText";
 
 export default function Index() {
   const scrollToSection = (sectionId: string) => {
@@ -38,6 +39,17 @@ export default function Index() {
             <h2 className="text-2xl md:text-4xl font-mono mb-8 text-birch-dark">
               ДЛЯ ТЕХ, КТО ХОЧЕТ <span className="bg-birch-black text-birch-white px-2">БАБЛО</span>, А НЕ <span className="line-through">ПОНТЫ</span>
             </h2>
+            <div className="text-xl md:text-2xl font-mono mb-8 text-birch-dark min-h-[60px]">
+              <TypewriterText 
+                texts={[
+                  "ВКАЛЫВАЮТ РОБОТЫ, А НЕ ЧЕЛОВЕК",
+                  "ДЮРУКС - ВСЁ ЛУЧШЕЕ НАХУЙ", 
+                  "НЕ ПОНТЫ, А РЕЗУЛЬТАТ",
+                  "ДЕНЬГИ НЕ ПАХНУТ, ЗАТО РАБОТАЮТ"
+                ]}
+                className="font-mono"
+              />
+            </div>
           </div>
           
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-12">
@@ -68,14 +80,14 @@ export default function Index() {
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-mono font-bold mb-6">О НАС // НЕ СТРОИМ ИЗ СЕБЯ</h2>
+              <h2 className="text-4xl font-mono font-bold mb-6">О НАС <span className="tree-slash">/</span><span className="tree-slash">/</span> НЕ СТРОИМ ИЗ СЕБЯ</h2>
               <p className="text-xl mb-4 font-sans">
-                Мы не агентство, которое будет пиздеть про «синергию» и «инновации». 
+                Мы не агентство, которое будет <span className="censored" data-censored="пиздеть">█████████</span> про «синергию» и «инновации». 
                 Мы делаем простые AI-инструменты, которые экономят ваше время и приносят деньги.
               </p>
               <p className="text-lg mb-6 text-birch-dark font-sans">
                 Честно говорим цены, честно считаем ROI, честно делаем работу. 
-                Без понтов, без маркетинговой хуеты — только результат.
+                Без понтов, без маркетинговой <span className="censored" data-censored="хуеты">█████████</span> — только результат.
               </p>
               <div className="flex flex-wrap gap-2">
                 <Badge variant="outline" className="font-mono">AI-АССИСТЕНТЫ</Badge>
@@ -89,6 +101,11 @@ export default function Index() {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-birch-white font-mono text-2xl glitch-text" data-text="ЦИФРОВОЙ_ЛЕС">ЦИФРОВОЙ_ЛЕС</div>
               </div>
+              {/* Floating Stone */}
+              <div className="floating-stone absolute top-4 right-8 w-12 h-12">
+                <img src="/img/35c52679-3bcd-4639-8e3e-295c084321f0.jpg" alt="Stone" className="w-full h-full object-contain" />
+                <div className="stone-label absolute -bottom-6 -right-4">камень</div>
+              </div>
             </div>
           </div>
         </div>
@@ -98,7 +115,7 @@ export default function Index() {
       <section id="services" className="py-20 px-4">
         <div className="container mx-auto">
           <h2 className="text-5xl font-mono font-bold text-center mb-16">
-            УСЛУГИ <span className="text-birch-dark">//</span> БЕЗ ЛИШНЕЙ ВОДЫ
+            УСЛУГИ <span className="text-birch-dark tree-slash">/</span><span className="text-birch-dark tree-slash">/</span> БЕЗ ЛИШНЕЙ ВОДЫ
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -163,7 +180,7 @@ export default function Index() {
       <section id="cases" className="py-20 bg-birch-black text-birch-white px-4">
         <div className="container mx-auto">
           <h2 className="text-5xl font-mono font-bold text-center mb-16">
-            КЕЙСЫ <span className="text-birch-gray">//</span> ЖИВЫЕ ЦИФРЫ
+            КЕЙСЫ <span className="text-birch-gray tree-slash">/</span><span className="text-birch-gray tree-slash">/</span> ЖИВЫЕ ЦИФРЫ
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -201,7 +218,7 @@ export default function Index() {
       <section className="py-20 bg-birch-gray px-4">
         <div className="container mx-auto text-center">
           <h2 className="text-4xl font-mono font-bold mb-8">
-            AI-КОНСУЛЬТАНТ <span className="text-birch-dark">//</span> ЗАДАЙ ВОПРОС
+            AI-КОНСУЛЬТАНТ <span className="text-birch-dark tree-slash">/</span><span className="text-birch-dark tree-slash">/</span> ЗАДАЙ ВОПРОС
           </h2>
           <div className="max-w-2xl mx-auto">
             <Card className="p-8 border-2 border-birch-black">
@@ -229,7 +246,7 @@ export default function Index() {
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <h2 className="text-5xl font-mono font-bold text-center mb-16">
-            ГОТОВЫЕ РЕШЕНИЯ <span className="text-birch-dark">//</span> КУПИ И РАБОТАЙ
+            ГОТОВЫЕ РЕШЕНИЯ <span className="text-birch-dark tree-slash">/</span><span className="text-birch-dark tree-slash">/</span> КУПИ И РАБОТАЙ
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -280,7 +297,7 @@ export default function Index() {
       <section id="contact" className="py-20 bg-birch-black text-birch-white px-4">
         <div className="container mx-auto text-center">
           <h2 className="text-5xl font-mono font-bold mb-8">
-            КОНТАКТЫ <span className="text-birch-gray">//</span> СВЯЗЬ
+            КОНТАКТЫ <span className="text-birch-gray tree-slash">/</span><span className="text-birch-gray tree-slash">/</span> СВЯЗЬ
           </h2>
           <p className="text-xl mb-12 font-sans text-birch-gray">
             Не любим звонки, любим Telegram. Отвечаем быстро и по делу.
@@ -317,7 +334,7 @@ export default function Index() {
           
           <div className="mt-12">
             <div className="birch-pattern-dark h-16 w-32 mx-auto mb-4 rounded"></div>
-            <p className="font-mono text-birch-gray">BEREZKA.AI // ЦИФРОВОЙ_ЛЕС</p>
+            <p className="font-mono text-birch-gray">BEREZKA.AI <span className="tree-slash">/</span><span className="tree-slash">/</span> ЦИФРОВОЙ_ЛЕС</p>
           </div>
         </div>
       </section>
@@ -328,7 +345,7 @@ export default function Index() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
               <div className="w-6 h-6 birch-pattern"></div>
-              <span className="font-mono font-bold">БЕРЁЗКА // AI-АГЕНТСТВО</span>
+              <span className="font-mono font-bold">БЕРЁЗКА <span className="tree-slash">/</span><span className="tree-slash">/</span> AI-АГЕНТСТВО</span>
             </div>
             <div className="flex space-x-6">
               <a href="https://t.me/berezka_ai" target="_blank" rel="noopener noreferrer" 
@@ -346,7 +363,7 @@ export default function Index() {
           </div>
           <div className="mt-8 pt-8 border-t border-birch-dark text-center">
             <p className="font-mono text-sm text-birch-dark">
-              © 2024 БЕРЁЗКА.AI // БЕЗ ПОНТОВ, ТОЛЬКО РЕЗУЛЬТАТ
+              © 2024 БЕРЁЗКА.AI <span className="tree-slash">/</span><span className="tree-slash">/</span> БЕЗ ПОНТОВ, ТОЛЬКО РЕЗУЛЬТАТ
             </p>
           </div>
         </div>

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Golos+Text:wght@400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -96,6 +98,88 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+
+  .font-mono {
+    font-family: "IBM Plex Mono", "Courier New", monospace;
+  }
+
+  .font-sans {
+    font-family: "Golos Text", system-ui, sans-serif;
+  }
+
+  .birch-pattern {
+    background-image: url('data:image/svg+xml,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="birch" patternUnits="userSpaceOnUse" width="20" height="20"><rect width="20" height="20" fill="%23ffffff"/><rect x="0" y="0" width="4" height="4" fill="%23000000"/><rect x="8" y="8" width="4" height="4" fill="%23000000"/><rect x="16" y="4" width="4" height="4" fill="%23000000"/><rect x="4" y="16" width="4" height="4" fill="%23000000"/></pattern></defs><rect width="20" height="20" fill="url(%23birch)"/></svg>');
+    background-size: 20px 20px;
+  }
+
+  .birch-pattern-dark {
+    background-image: url('data:image/svg+xml,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="birch-dark" patternUnits="userSpaceOnUse" width="20" height="20"><rect width="20" height="20" fill="%23000000"/><rect x="0" y="0" width="4" height="4" fill="%23ffffff"/><rect x="8" y="8" width="4" height="4" fill="%23ffffff"/><rect x="16" y="4" width="4" height="4" fill="%23ffffff"/><rect x="4" y="16" width="4" height="4" fill="%23ffffff"/></pattern></defs><rect width="20" height="20" fill="url(%23birch-dark)"/></svg>');
+    background-size: 20px 20px;
+  }
+
+  .glitch-text {
+    position: relative;
+  }
+
+  .glitch-text::before,
+  .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .glitch-text::before {
+    animation: glitch-1 0.5s infinite;
+    color: rgba(255, 0, 0, 0.8);
+    z-index: -1;
+  }
+
+  .glitch-text::after {
+    animation: glitch-2 0.5s infinite;
+    color: rgba(0, 255, 255, 0.8);
+    z-index: -2;
+  }
+
+  @keyframes glitch-1 {
+    0%,
+    100% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-2px, 2px);
+    }
+    40% {
+      transform: translate(-2px, -2px);
+    }
+    60% {
+      transform: translate(2px, 2px);
+    }
+    80% {
+      transform: translate(2px, -2px);
+    }
+  }
+
+  @keyframes glitch-2 {
+    0%,
+    100% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(2px, -2px);
+    }
+    40% {
+      transform: translate(2px, 2px);
+    }
+    60% {
+      transform: translate(-2px, -2px);
+    }
+    80% {
+      transform: translate(-2px, 2px);
+    }
   }
 }
